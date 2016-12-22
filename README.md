@@ -7,7 +7,8 @@ simple and easy to use http client library based on native URLSession
 
 * simple RAW Object request/response
 
-      Web.create(method: "GET", serverUrl: "https://github.com/fluidicon.png")
+
+          Web.create(method: "GET", serverUrl: "https://github.com/fluidicon.png")
                 .onError({ (error) -> Void in
                     print("Image Error!")
                     print(error)
@@ -19,7 +20,6 @@ simple and easy to use http client library based on native URLSession
                     }
              
             }
-
 
 
 * simple GET Request and response as JSONObject
