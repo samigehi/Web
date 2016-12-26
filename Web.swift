@@ -230,6 +230,14 @@ class WebManager: NSObject, URLSessionDelegate {
     func execute(_ callback: ((_ data: Data?, _ response: HTTPURLResponse?) -> Void)? = nil) {
         self.callback = callback
         
+         if request?.url == nil
+        {
+            DispatchQueue.main.async {
+                self.errorCallback?(NSError.init(domain: "WebManager -- URL is NULL", code: -1, userInfo: nil))
+            }
+            return
+        }
+        
         self.buildRequest()
         self.buildHeader()
         self.buildBody()
